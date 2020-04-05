@@ -47,7 +47,7 @@ const binChars = string =>
   string.split('').reduce((chars, char)=> ({
     ...chars,
     [char]: (chars[char] || 0) + 1,
-  }), {})
+  }), {});
 
 export const areStringsAnagrams = (string1, string2)=>{
   const firstChars = binChars(string1);
@@ -58,4 +58,4 @@ export const areStringsAnagrams = (string1, string2)=>{
   ) && Object.keys(firstChars)
              .reduce(( isEqual, char )=>
                isEqual && firstChars[char] === secondChars[char], true);
-}
+};
